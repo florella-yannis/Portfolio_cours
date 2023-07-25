@@ -169,7 +169,7 @@ header nav ul li a:hover::after{
 
 .turn{
     position: absolute;
-    right: 33px;
+    right: 45px;
     top: 460px;
     position: fixed;
     z-index: 200;

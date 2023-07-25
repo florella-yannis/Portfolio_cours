@@ -28,7 +28,7 @@
     --couleur-box:rgba(255, 255, 255, 0.155);
 }
 
-/*
+
     :root.light {
         --bck-color: #FAFBFE;
         --texte-principal: #000101;
@@ -41,7 +41,28 @@
         --couleur-box:rgba(164, 164, 164, 0.155);
 
     }
-*/
+
+
+/* Appliquer les propriétés du thème en fonction de la classe de la balise html */
+html.light {
+    --theme-background: var(--bck-color);
+    --theme-text: var(--texte-principal);
+    /* Ajoutez d'autres propriétés de thème ici */
+}
+
+html {
+    --theme-background: var(--couleur-nav);
+    --theme-text: var(--texte-change);
+    /* Ajoutez d'autres propriétés de thème ici */
+}
+
+body {
+    /* Utilisez les propriétés de thème définies par la balise html */
+    background-color: var(--theme-background);
+    color: var(--theme-text);
+    transition: background-color 0.8s ease, color 0.8s ease;
+    /* Ajoutez d'autres propriétés de thème ici */
+}
 
 
 ::selection{

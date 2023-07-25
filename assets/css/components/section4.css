@@ -9,7 +9,7 @@
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    gap: 2vmin;
+    gap: 10vmin;
     padding: 15px;
     justify-content: center;
 }
