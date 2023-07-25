@@ -1,0 +1,67 @@
+
+.tech h2{
+    text-align: center;
+    margin: 30px;
+    font-size: calc(1rem + 2.5vw);
+}
+.tech {
+    padding: 100px 0;
+}
+
+.box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+
+.box .competence{
+    background-color: var(--couleur-box);
+    border-radius: 5px;
+    width: 40%;
+    margin: 20px;
+    text-align: center;
+    padding: 20px;
+}
+
+.anim{
+    transition:all  ease-in 0.8s;
+}
+.anim:hover{
+    transform:rotate(360deg);
+    
+}
+.anim2{
+    transition:all  ease-out 1s;
+}
+.anim2:hover{
+    transform:scale(1.2);
+    
+}
+
+@media screen and (max-width:850px){
+    .imgstyle .imgp {
+        max-width: 60vw;
+    }
+  
+}
+
+@media screen and (max-width:400px){
+    .box .competence {
+        background-color: rgba(255, 255, 255, 0.155);
+        border-radius: 5px;
+        width: 80%;
+        margin: 20px;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .lien{
+        margin-top: 15px;
+    }
+    .lien .trait2{
+        margin: 10px 0;
+    }
+  
+}
+
