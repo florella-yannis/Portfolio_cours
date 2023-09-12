@@ -43,7 +43,9 @@
     .imgstyle .imgp {
         max-width: 60vw;
     }
-  
+    .box .competence {
+        width: 70%;
+    }
 }
 
 @media screen and (max-width:400px){

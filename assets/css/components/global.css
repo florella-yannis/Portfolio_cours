@@ -19,6 +19,7 @@
     --texte-principal: #dadada;
     --couleur-secondaire: #34343b;
     --couleur-3: #e4aa48;
+    --couleur-4: #eab65d;
     --couleur-trait:#000101;
     --couleur-nav:#2B2B34;
     --texte-hover:#d2d2d2;
@@ -34,6 +35,7 @@
         --texte-principal: #000101;
         --couleur-secondaire: #f1f4ff;
         --couleur-3: #466C88;
+        --couleur-4: #6085a0;
         --couleur-nav:#82ccdd;
         --couleur-widget:#466C88;
         --couleur-footer:#466C88;

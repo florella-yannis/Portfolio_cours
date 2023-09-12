@@ -12,23 +12,23 @@
 
 .imgstyle .imgp{
     margin: 0 auto;
-   max-width: 30vw;
+   max-width: 40vw;
    margin-bottom: 40px;
 }
 
 .imgstyle .imgp img{
     width: 100%;
-    filter: grayscale(100%);
+    filter: grayscale(30%);
     transition: 1s;
     -webkit-box-shadow: 11px 11px 20px 5px rgba(0,0,0,0.58); 
     box-shadow: 11px 11px 20px 5px rgba(0,0,0,0.58);
     
 }
 
-.imgstyle .imgp img:hover {
+/* .imgstyle .imgp img:hover {
     filter: grayscale(60%);
     
-}
+} */
 
 .contenaire .textimg {
     text-align: center;
