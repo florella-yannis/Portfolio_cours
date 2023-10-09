@@ -10,17 +10,17 @@
     padding-right: 70px;
 }
 .pfirst h1 {
-    font-size: 3rem;
+    font-size: calc(2rem + 1vw);
 }
 .pfirst h2 {
-    font-size: 30px;
+    font-size: calc(1.5rem + 0.5vw); 
 }
 .pfirst p {
     margin: 25px 0;
-    font-size: 1.1rem;
+    font-size: calc(1rem + 0.25vw);
 }
 .pfirst h1 i{
-    font-size: 0.5rem;
+    font-size: calc(0.5rem + 0.15vw);
     margin-left: 10px;
     color: var(--couleur-3);
 }

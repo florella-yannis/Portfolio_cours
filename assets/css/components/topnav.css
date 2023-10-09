@@ -104,11 +104,11 @@ header nav ul li a:hover::after{
     transform: scale(1.2);
 }
 .fa-linkedin:hover{
-    color: #0e76a8 ;
+    color: #0facf5 ;
     transition: all 1s ease;
 }
 .fa-git:hover{
-    color: #171515 ;
+    color:  #c1b9b9cc;
     transition: all 1s ease;
 }
 .fa-envelope:hover{
@@ -172,9 +172,15 @@ header nav ul li a:hover::after{
 
 .turn{
     position: absolute;
-    right: 45px;
+    right: 38px;
     top: 460px;
     position: fixed;
-    z-index: 80;
+    z-index: 100;
     cursor: pointer;
+}
+
+.turn i {
+    border-radius: 9px;
+    padding: 14px;
+    background: var(--couleur-turn); 
 }

@@ -27,6 +27,7 @@
     --couleur-footer:#000101;
     --texte-change:#e4aa48;
     --couleur-box:rgba(255, 255, 255, 0.155);
+    --couleur-turn:#dadada59;
 }
 
 
@@ -41,6 +42,7 @@
         --couleur-footer:#466C88;
         --texte-change:#dadada;
         --couleur-box:rgba(164, 164, 164, 0.155);
+        --couleur-turn:#9791919c;
 
     }
 
@@ -116,3 +118,4 @@ h1, h2, h3, h4 {
     background: var(--couleur-3);
     margin: 5px 0;
 }
+

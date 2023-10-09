@@ -30,20 +30,29 @@ if (isset($_POST['submit'])) {
         }
     } else {
         // Si aucune erreur, envoyer l'e-mail
-        $to = "florellayannis@gmail.com";
-        $from = $email;
-        $header = "From:\"$name\"<$from>\n";
-        $header .= "Reply-To:$from\n";
-        $header .= "Content-type:text/html; charset=\"iso-8859-1\"";
+        $to = "florellayannis@gmail.com"; // Adresse e-mail de destination
+        $subject = "Nouveau message de contact"; // Sujet de l'e-mail
 
-        if (mail($to, "Nouveau message de contact", $message, $header)) {
-            echo "Votre e-mail a été envoyé avec succès.";
+        // Corps de l'e-mail
+        $mailContent = "Nom: $name\n";
+        $mailContent .= "E-mail: $email\n\n";
+        $mailContent .= "Message:\n$message";
+
+        // En-têtes de l'e-mail
+        $headers = "From: $name <$email>\r\n";
+        $headers .= "Reply-To: $email\r\n";
+        $headers .= "MIME-Version: 1.0\r\n";
+        $headers .= "Content-type: text/plain; charset=UTF-8\r\n";
+
+        if (mail($to, $subject, $mailContent, $headers)) {
+            echo 'Votre e-mail a été envoyé avec succès.';
         } else {
-            echo "Erreur : Votre e-mail n'a pas pu être envoyé. Veuillez réessayer.";
+            echo 'Erreur : Votre e-mail n\'a pas pu être envoyé. Veuillez réessayer.';
         }
     }
 }
 ?>
+
 
 
 <!DOCTYPE html>
@@ -58,10 +67,11 @@ if (isset($_POST['submit'])) {
     <script src="https://kit.fontawesome.com/2b3bbb85b2.js" crossorigin="anonymous"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="icon" href="assets/img/logo.png">
 </head>
 
 <body>
-
+<div class="cursor"></div>
     <header>
         <nav>
             <span>FY<i class="fa-solid fa-circle"></i></span>
@@ -74,19 +84,19 @@ if (isset($_POST['submit'])) {
             </ul>
             <i class="fa-solid fa-bars"></i>
         </nav>
+        
     </header>
 
     <nav class="widget">
-        <a href="https://www.linkedin.com/in/yannis-florella-9b055918a/"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="https://github.com/trending"><i class="fa-brands fa-git"></i></a>
+        <a href="https://www.linkedin.com/in/yannis-florella-9b055918a/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/florella-yannis" target="_blank"><i class="fa-brands fa-git"></i></a>
         <a href="./assets/document/CV-Florella-Yannis-DWWM.pdf" download="yannis-florella-cv">CV</a>
         <a href="mailto:florellayannis@gmail.com"><i class="fa-solid fa-envelope"></i></a>
     </nav>
     <nav class="turn">
-        <i class="fa-solid fa-sun" id="toggleDark"></i>
+        <i class="fa-solid fa-lightbulb" id="toggleDark"></i>
         <!-- <div id="moon"><i class="fa-solid fa-moon"></i></div> -->
     </nav>
-    <!-- <div id="particles-js"></div> -->
     <main>
         <section class="presentation" id="presentation" data-aos="fade-right" data-aos-duration="2000">
             <div class="pfirst" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="50">
@@ -117,11 +127,13 @@ if (isset($_POST['submit'])) {
                         <img src="./assets/img/change.jpg" alt="reconvertion">
                     </div>
                 </div>
-                <p data-aos="fade-right" data-aos-delay="200" data-aos-duration="2000">Passionné par l'aventure et la découverte, je me suis lancé dans le développement web en juin 2022 après des voyages en Asie et en Europe où j'ai rencontré des nomades digitaux et des développeurs web inspirants. J'ai suivi ensuite une formation de 7 mois chez Doranco pour acquérir des compétences solides en développement web.</p>
+                <p data-aos="fade-right" data-aos-delay="200" data-aos-duration="2000"><strong>Passionné par l'aventure et la découverte</strong>, je me suis lancé dans le développement web en juin 2022 après des voyages en Asie et en Europe où j'ai rencontré des nomades digitaux et des développeurs web inspirants. J'ai suivi ensuite une formation de 7 mois chez Doranco pour acquérir des compétences solides en <strong>développement web</strong> <i class="fas fa-laptop-code"></i>.</p>
 
-                <p data-aos="fade-right" data-aos-delay="400" data-aos-duration="2000">À court terme, je recherche une entreprise pour une alternance en tant que concepteur développeur d'application. Mon objectif est de continuer à développer mes compétences et de contribuer à des projets innovants.</p>
+                <p data-aos="fade-right" data-aos-delay="400" data-aos-duration="2000">À court terme, je recherche une entreprise pour une alternance en tant que <strong>concepteur développeur d'application</strong>. Mon objectif est de continuer à développer mes compétences et de contribuer à des projets innovants <i class="fas fa-lightbulb"></i>.</p>
+                
+                <p data-aos="fade-right" data-aos-delay="600" data-aos-duration="2000">Mon plus grand plaisir dans le <strong>développement web</strong> réside dans la <strong>création</strong>, la <strong>résolution de problèmes</strong> et l'<strong>innovation</strong>.</p>
 
-                <p data-aos="fade-right" data-aos-delay="600" data-aos-duration="2000">Mon plus grand plaisir dans le développement web réside dans la création, la résolution de problèmes et l'innovation.</p>
+
 
                 <!-- <p data-aos="fade-right" data-aos-delay="800" data-aos-duration="2000">Un nouveau monde s’offre a moi avec Doranco, allié travail et plaisir tout en vivant ma vie rêver.
             7 mois de formation intense, prêt a relever un nouveau challenge.</p> -->
@@ -166,37 +178,55 @@ if (isset($_POST['submit'])) {
         <section class="projet" id="projets">
             <h2 data-aos="fade-down" data-aos-delay="200" data-aos-duration="2000">MES REALISATIONS</h2>
 
-            <div class="gallery" data-aos="fade-down" data-aos-duration="2000" data-aos-duration="2000">
-                <div data-aos="zoom-in" data-aos-delay="50" data-aos-duration="2000">
-                    <div class="boite"><a href="https://www.google.fr/"><img src="./assets/img/ecran1.png" alt="ecran1"></a></div>
+            <div class="gallery" data-aos="fade-down" data-aos-duration="2000" data-aos-duration="2000"> 
+                <div data-aos="zoom-in" data-aos-delay="90" data-aos-duration="2000">
+                    <div class="boite"><a href="https://csnet.fr/"  target="_blank><img src="./assets/img/csnet.png" alt="csnet" target="_blank"><div class="hover-text">Au cours de mon stage, j'ai contribué à la création d'un site de gestion des devis. J'ai participé à la mise en place de fonctionnalités de gestion des clients, des projets et des devis.</div></a></div>
                     <div class="lien">
-                        <a href="https://www.google.fr/">GOOGLE</a>
+                        <a href="https://csnet.fr/" target="_blank">CS-NET</a>
                         <div class="trait2"></div>
-                        <p>2023</p>
+                        <p>SYMFONY</p>
+                    </div>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="50" data-aos-duration="2000">
+                    <div class="boite"><a href="https://github.com/florella-yannis/Teeshop" target="_blank"><img src="./assets/img/ecran1.png" alt="e-commerce"><div class="hover-text">J'ai créé un site e-commerce dynamique. Ce projet m'a permis de développer des compétences en gestion de bases de données et en création d'interfaces utilisateur.</div></a></div>
+                    <div class="lien">
+                        <a href="https://github.com/florella-yannis/Teeshop" target="_blank">SITE E-COMMERCE</a>
+                        <div class="trait2"></div>
+                        <p>SYMFONY</p>
                     </div>
                 </div>
                 <div data-aos="zoom-in" data-aos-delay="70" data-aos-duration="2000">
-                    <div class="boite"><a href="https://www.google.fr/"><img src="./assets/img/ecran2.png" alt="ecran2"></a></div>
+                    <div class="boite"><a href="https://github.com/florella-yannis/Portfolio_cours" target="_blank"><img src="./assets/img/ecran2.png" alt="Portfolio"><div class="hover-text">Mon portfolio est une vitrine de mes compétences en développement web. Il met en avant mes projets et compétences de manière claire et attrayante.</div></a>
+                </div>
                     <div class="lien">
-                        <a href="https://www.google.fr/">PORTFOLIO 1</a>
+                        <a href="https://github.com/florella-yannis/Portfolio_cours" target="_blank">PORTFOLIO</a>
                         <div class="trait2"></div>
-                        <p>2023</p>
+                        <p>PHP / CSS / JAVASCRIPT</p>
                     </div>
                 </div>
                 <div data-aos="zoom-in" data-aos-delay="90" data-aos-duration="2000">
-                    <div class="boite"><a href="https://www.google.fr/"><img src="./assets/img/ecran3.png" alt="ecran3"></a></div>
+                    <div class="boite"><a href="https://github.com/florella-yannis/FYPress" target="_blank"><img src="./assets/img/ecran3.png" alt="Blog"><div class="hover-text">J'ai créé un site web dédié à la publication d'articles de presse. Ce projet m'a permis de maîtriser la gestion des contenus, l'authentification des utilisateurs et la création de pages dynamiques pour les articles.</div></a></div>
                     <div class="lien">
-                        <a href="https://www.google.fr/">PORTFOLIO 2</a>
+                        <a href="https://github.com/florella-yannis/FYPress" target="_blank">ARTICLES DE PRESSE</a>
                         <div class="trait2"></div>
-                        <p>2023</p>
+                        <p>SYMFONY</p>
+                    </div>
+                </div>
+
+                <div data-aos="zoom-in" data-aos-delay="90" data-aos-duration="2000">
+                    <div class="boite"><a href="https://github.com/ronicairo/Hotel" target="_blank"><img src="./assets/img/ecran6.png" alt="csnet"><div class="hover-text"> En collaboration avec une équipe,nous avons développé un système de réservation en ligne d'un hôtel. Ce projet a impliqué la création de formulaires de réservation, la gestion des disponibilités et la mise en place de confirmations automatiques pour les clients.</div></a></div>
+                    <div class="lien">
+                        <a href="https://github.com/ronicairo/Hotel" target="_blank">SITE DE RESERVATION D'HOTEL</a>
+                        <div class="trait2"></div>
+                        <p>SYMFONY</p>
                     </div>
                 </div>
                 <div data-aos="zoom-in" data-aos-delay="110" data-aos-duration="2000">
-                    <div class="boite"><a href="https://www.google.fr/"><img src="./assets/img/ecran4.png" alt="ecran4"></a></div>
+                    <div class="boite"><a href="https://florella-yannis.github.io/calculatrice/" target="_blank"><img src="./assets/img/ecran5.png" alt="calculatrice"><div class="hover-text">Ce projet m'a permis de renforcer mes compétences en développement front-end.</div></a></div>
                     <div class="lien">
-                        <a href="https://www.google.fr/">STUDIORAMA</a>
+                        <a href="https://florella-yannis.github.io/calculatrice/" target="_blank">CALCULATRICE</a>
                         <div class="trait2"></div>
-                        <p>2023</p>
+                        <p>HTML / CSS / JAVASCRIPT</p>
                     </div>
                 </div>
             </div>
@@ -206,9 +236,9 @@ if (isset($_POST['submit'])) {
 
         <section class="contact" id="contact">
             <h2 data-aos="fade-up" data-aos-delay="500" data-aos-duration="2000">CONTACT</h2>
-            <h3>DEMARRONS UN PROJET ENSEMBLE, N'HESITEZ PAS A ME CONTACTER</h3>
+            <!-- <h3>DEMARRONS UN PROJET ENSEMBLE, N'HESITEZ PAS A ME CONTACTER</h3> -->
             <div class="formulaire">
-                <form action="envoi_email.php" method="POST" enctype="multipart/form-data">
+                <form method="POST" enctype="multipart/form-data">
                     <label for="name"></label>
                     <input required="" type="text" id="name" name="name" placeholder="Nom" required>
 
@@ -220,16 +250,6 @@ if (isset($_POST['submit'])) {
 
                     <button type="submit" name="submit">Me contacter</button>
                 </form>
-
-                <?php
-                if (!empty($errors)) {
-                    echo '<div class="error-messages">';
-                    foreach ($errors as $error) {
-                        echo '<p>' . $error . '</p>';
-                    }
-                    echo '</div>';
-                }
-                ?>
 
             </div>
             <div class="map" data-aos="fade-down" data-aos-delay="100" data-aos-duration="1500">
@@ -259,7 +279,7 @@ if (isset($_POST['submit'])) {
             <!--<div class="top">
             <a href="#"><i class="fa-solid fa-arrow-up"></i></a>
         </div>-->
-            <p>&copy; Florella Yannis <i class="fa-solid fa-circle"></i> Tous droits réservés</p>
+         <p>Copyright &copy; 2023 FLORELLA Yannis  <i class="fa-solid fa-circle"></i> Tous droits réservés</p>
         </footer>
     </main>
 

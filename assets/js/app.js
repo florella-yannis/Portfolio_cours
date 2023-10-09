@@ -11,14 +11,16 @@ toggle.addEventListener('click', function () {
 });
 
 toggle.addEventListener('click', function () {
-    if (this.classList.contains('fa-sun')) {
-        this.classList.replace('fa-sun', 'fa-moon');
+    if (this.classList.contains('fa-solid fa-lightbulb')) {
+        this.classList.replace('fa-solid fa-lightbulb', 'fa-regular fa-lightbulb');
     } else {
-        this.classList.replace('fa-moon', 'fa-sun');
+        this.classList.replace('fa-regular fa-lightbulb', 'fa-solid fa-lightbulb');
     }
 });
 
-// a refaire 
+// a finir 
+
+
 const menuHamburger = document.querySelector(".fa-bars")
 const navLinks = document.querySelector("#nav-links")
 
@@ -27,7 +29,7 @@ navLinks.classList.toggle('mobile-menu');
 })
 
 
-
+// faire le curseur suivre la souris 
 const cursor = document.querySelector('.cursor');
 
 document.addEventListener('mousemove', (event) => {
