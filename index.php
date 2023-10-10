@@ -180,7 +180,7 @@ if (isset($_POST['submit'])) {
 
             <div class="gallery" data-aos="fade-down" data-aos-duration="2000" data-aos-duration="2000"> 
                 <div data-aos="zoom-in" data-aos-delay="90" data-aos-duration="2000">
-                    <div class="boite"><a href="https://csnet.fr/"  target="_blank><img src="./assets/img/csnet.png" alt="csnet" target="_blank"><div class="hover-text">Au cours de mon stage, j'ai contribué à la création d'un site de gestion des devis. J'ai participé à la mise en place de fonctionnalités de gestion des clients, des projets et des devis.</div></a></div>
+                    <div class="boite"><a href="https://csnet.fr/"  target="_blank"><img src="./assets/img/csnet.png" alt="csnet" target="_blank"><div class="hover-text">Au cours de mon stage, j'ai contribué à la création d'un site de gestion des devis. J'ai participé à la mise en place de fonctionnalités de gestion des clients, des projets et des devis.</div></a></div>
                     <div class="lien">
                         <a href="https://csnet.fr/" target="_blank">CS-NET</a>
                         <div class="trait2"></div>
