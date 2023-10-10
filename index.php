@@ -90,7 +90,7 @@ if (isset($_POST['submit'])) {
     <nav class="widget">
         <a href="https://www.linkedin.com/in/yannis-florella-9b055918a/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
         <a href="https://github.com/florella-yannis" target="_blank"><i class="fa-brands fa-git"></i></a>
-        <a href="./assets/document/CV-Florella-Yannis-DWWM.pdf" download="yannis-florella-cv">CV</a>
+        <a href="./assets/document/CvFlorellaYannis.pdf" download="yannis-florella-cv">CV</a>
         <a href="mailto:florellayannis@gmail.com"><i class="fa-solid fa-envelope"></i></a>
     </nav>
     <nav class="turn">
